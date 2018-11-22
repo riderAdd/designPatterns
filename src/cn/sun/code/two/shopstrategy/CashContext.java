@@ -17,4 +17,5 @@ public class CashContext {
 	public double getResult(double money) {
 		return cs.acceptCash(money);
 	}
+
 }
