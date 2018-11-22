@@ -1,4 +1,4 @@
-package cn.sun.code.two;
+package cn.sun.code.two.shop;
 
 /**
  * 正常收费子类

@@ -1,4 +1,4 @@
-package cn.sun.code.two;
+package cn.sun.code.two.shopstrategy;
 
 /**
  * 现金收费抽象类
