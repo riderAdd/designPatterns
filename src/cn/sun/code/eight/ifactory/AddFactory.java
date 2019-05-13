@@ -6,12 +6,12 @@ import cn.sun.code.one.ouhe.Operation;
  * 具体工厂类
  */
 public class AddFactory implements IFactory {
-	
+
 	@Override
 	public Operation createOperation() {
 		return new OperationAdd();
 	}
-	
+
 }
 
 class SubFactory implements IFactory {
@@ -44,8 +44,8 @@ class DivFactory implements IFactory {
 /**
  * 客户端
  */
-class Client{
-	
+class Client {
+
 	public static void main(String[] args) {
 		IFactory operFactory = new AddFactory();
 		Operation operation = operFactory.createOperation();
@@ -54,5 +54,5 @@ class Client{
 		double result = operation.getResult();
 		System.out.println(result);
 	}
-	
+
 }
