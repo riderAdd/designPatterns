@@ -77,6 +77,7 @@ public class Resume2 implements Cloneable {
 
 		Resume2 b = (Resume2)a.clone();
 		b.setLevel("六代目火影");
+		System.out.println(a.clone().equals(a));
 
 		a.display();
 		b.display();
