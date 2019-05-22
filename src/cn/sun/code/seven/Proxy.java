@@ -4,16 +4,16 @@ package cn.sun.code.seven;
  * Subject类，定义了RealSubject和Proxy的公共接口，这样就在任何使用RealSubject的地方都可以
  * 使用Proxy
  */
-abstract class Subject {
+interface Subject {
 
-	public abstract void request();
+	void request();
 
 }
 
 /**
  * RealSubject类，定义Proxy所代表的真实实体
  */
-class RealSubject extends Subject {
+class RealSubject implements Subject {
 
 	@Override
 	public void request() {
@@ -25,7 +25,7 @@ class RealSubject extends Subject {
  * Proxy类，保存一个引用使得代理可以访问实体，并提供一个与Subject的接口相同的接口
  * 这样代理就可以用来代替实体
  */
-public class Proxy extends Subject {
+public class Proxy implements Subject {
 
 	private RealSubject realSubject;
 
@@ -35,7 +35,9 @@ public class Proxy extends Subject {
 		if (realSubject == null) {
 			realSubject = new RealSubject();
 		}
+		System.out.println("对委托类开始增强");
 		realSubject.request();
+		System.out.println("对委托类增强结束");
 	}
 
 }

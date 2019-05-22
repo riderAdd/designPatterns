@@ -18,4 +18,22 @@ public class CashContext {
 		return cs.acceptCash(money);
 	}
 
+	/**
+	 * 客户端代码
+	 */
+	public static void main(String[] args) {
+		CashContext cc = null;
+		switch ("") {
+			case "正常收费":
+				cc = new CashContext(new CashNormal());
+				break;
+			case "满300减100":
+				cc = new CashContext(new CashReturn("300", "100"));
+				break;
+			case "打8折":
+				cc = new CashContext(new CashRebate("0.8"));
+				break;
+		}
+	}
+
 }
